@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td class="a">Tab 1</td>
+        <td class="a">Tab 2</td>
+        <td class="a">Tab 3</td>
+        <td class="a">Tab 4</td>
+        <td class="a">Tab 5</td>
+        <td class="a">Tab 6</td>
+        <td class="a">
+            <button onclick="onNext()">Next</button>
+        </td>
+    </tr>
+</table>
+<p id="text"></p>
+<!---------------------------------Code js----------------------------->
+<script>
+
+    var index = 0;
+    var outputText=document.getElementById('text');
+    var cells = document.querySelectorAll('.a');
+        cells[index].style.color = 'red';
+        outputText.textContent=cells[index].textContent+' content';
+
+
+    function onNext() {
+        if (index===5){
+            cells[index].style.color='black'
+            index=0;
+            cells[index].style.color='red';
+            outputText.textContent=cells[index].textContent+' content';
+        }
+        else {
+            cells[index].style.color = 'black';
+            index += 1;
+            cells[index].style.color = 'red';
+            outputText.textContent=cells[index].textContent+' content';
+            console.log(index)
+        }
+
+    }
+</script>
+</body>
+</html>
